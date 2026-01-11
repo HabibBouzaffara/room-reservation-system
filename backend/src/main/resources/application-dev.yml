@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: room-reservation-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/room_reservation
+    username: room_user
+    password: secure_password_here
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+... (see provided application-dev.yml for full content)
