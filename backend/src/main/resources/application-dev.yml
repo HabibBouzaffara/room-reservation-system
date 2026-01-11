@@ -45,7 +45,7 @@ spring:
       password: admin123
 
 server:
-  port: 8080
+  port: 8092
   servlet:
     context-path: /api
   compression:
@@ -68,7 +68,7 @@ jwt:
   expiration: 86400000
 
 cors:
-  allowed-origins: "http://localhost:5173,http://localhost:3000"
+  allowed-origins: "http://localhost:5173,http://localhost:3005,http://localhost:8092,http://localhost:62276"
   allowed-methods: "GET,POST,PUT,DELETE,PATCH,OPTIONS"
   allowed-headers: "*"
   allow-credentials: true

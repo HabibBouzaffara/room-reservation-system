@@ -1,18 +1,36 @@
-import { CssBaseline, Container, Typography } from '@mui/material';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Login } from "./pages/Login";
+import { SignUp } from "./pages/SignUp";
+import { Dashboard } from "./pages/Dashboard";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#1976d2",
+    },
+  },
+});
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          Room Reservation System
-        </Typography>
-        <Typography>
-          Backend should be running on http://localhost:8080/api
-        </Typography>
-      </Container>
-    </>
+      <Router>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/' element={<Navigate to='/dashboard' />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
